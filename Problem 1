@@ -1,0 +1,6 @@
+def sum_of_multiples(limit, multiples):
+    return sum(i for i in range(limit) if any(i % m == 0 for m in multiples))
+
+limit = 1000
+result = sum_of_multiples(limit, [3, 5])
+print(f"The sum of all multiples of 3 or 5 below {limit} is: {result}")
