@@ -1,0 +1,6 @@
+import math
+from functools import reduce
+
+lcm = lambda a, b: a * b // math.gcd(a, b)
+result = reduce(lcm, range(1, 21))
+print(result)
