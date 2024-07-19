@@ -1,0 +1,10 @@
+def sum_of_primes_below(limit):
+    sieve = [True] * limit
+    sieve[0] = sieve[1] = False
+    for start in range(2, int(limit**0.5) + 1):
+        if sieve[start]:
+            sieve[start*start:limit:start] = [False] * len(sieve[start*start:limit:start])
+    return sum(i for i in range(limit) if sieve[i])
+
+result = sum_of_primes_below(2000000)
+print(result)
